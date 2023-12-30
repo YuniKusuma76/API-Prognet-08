@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Validator;
-use Auth;
 
-class UserApiController extends Controller
+class AuthApiController extends Controller
 {
     public function register(Request $request)
     {
@@ -31,6 +29,7 @@ class UserApiController extends Controller
 
             $success['name'] = $user->name;
             $success['email'] = $user->email;
+
             return response()->json([
                 'success' => true,
                 'message' => 'Registrasi Sukses Dilakukan',
